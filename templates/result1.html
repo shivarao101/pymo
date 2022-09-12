@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/font-awesome.min.css">
+		<!-- bootstrap.min -->
+        <link rel="stylesheet" href="static/css/jquery.fancybox.css">
+		<!-- bootstrap.min -->
+        <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <title>Welcome</title>
+</head>
+<body>
+   <h3>{{info}}</h3>
+   <section id="convolve">
+    <form action="result" method= 'post'>
+        {% csrf_token %}
+        <input type="text" id="num1" name="num1" placeholder="username" required><br><br>
+        <input type="text" id="num2" name="num2" placeholder="password" required><br><br>
+        <input type="submit" value="Submit" name="conv">
+    </form>
+    {% if conv %}
+    <h4>{{res}}</h4>
+    {% endif %}
+</section>
+<section id="fft">
+    <form action="result" method= 'post'>
+        {% csrf_token %}
+        <input type="text" id="num1" name="num1" placeholder="username" required><br><br>
+        <input type="text" id="num2" name="num2" placeholder="password" required><br><br>
+        <input type="submit" value="Submit" name="fft">
+    </form>
+    {% if fft %}
+    <h4>{{res}}</h4>
+    {% endif %}
+</section>
+</body>
+</html>
